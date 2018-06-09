@@ -35,11 +35,24 @@
 
 <body>
     <div class="count">
-		<h1><a href="https://discord.gg/taylorswift/"><span id="message" style="font-size:200%">The /r/TaylorSwift <br>Discord OOF Debt</span></a><br>
+		<h1><a href="https://discord.gg/taylorswift/">The /r/TaylorSwift <br>Discord OOF Debt</a><br>
 		<p>On 23 May 2018, Wet Patootie was banned from using the word "oof" on the /r/TaylorSwift Discord server.</p>
-		<p>As of 9 June 2018 6:00AM (UTC), Wet Patootie has said the forbidden word 380,988 times, incurring an overall debt of 133,345,800 taypoints.</p> 
-		<p>Of this amount, 1,414 (0.001%) taypoints have been settled. Collected taypoints will be donated to charity via a raffle.</p>
+		<p>As of 9 June 2018 6:00AM (UTC), Wet Patootie has said the forbidden word <span id="oofCount">????</span> times, incurring an overall debt of <span id="totalDebt">????</span> taypoints.</p> 
+		<p>Of this amount, <span id="settledAmount">????</span> (<span id="percentSettled">????</span>%) taypoints have been settled. Collected taypoints will be donated to charity via a raffle.</p>
 	</div>
+	
+	<script type="text/javascript">
+	var oofCount = 380988;
+	var settledAmount = 1414;
+	
+	
+	var totalDebt = oofCount * 350;
+	var percentSettled = Math.round(settledAmount * 100000 / totalDebt) / 1000;
+	document.getElementById("oofCount").innerHTML = oofCount.toLocaleString();
+	document.getElementById("settledAmount").innerHTML = settledAmount.toLocaleString();
+	document.getElementById("totalDebt").innerHTML = totalDebt.toLocaleString();
+	document.getElementById("percentSettled").innerHTML = percentSettled;
+	</script>
 	
 </body>
 </html>
