@@ -37,7 +37,7 @@
 	background-position: 50% 40%;
 	background-size:100%;
 	background-repeat: no-repeat;
-	background-attachment: scroll;
+	background-attachment: fixed;
     }
 	@font-face {
     font-family: Uni Sans Heavy;
@@ -56,8 +56,9 @@
     <div class="count">
 		<h1><a href="https://discord.gg/taylorswift/" style="font-size:175%">The /r/TaylorSwift <br>Discord OOF Debt</a><br>
 		<p>On 23 May 2018, Wet Patootie was banned from using the word "oof" on the /r/TaylorSwift Discord server.</p>
-		<p>As of 9 June 2018 6:00AM (UTC), Wet Patootie has said the forbidden word <span id="oofCount">????</span> times, incurring an overall debt of <span id="totalDebt">????</span> taypoints.</p> 
+		<p>Wet Patootie has since said the forbidden word <span id="oofCount">????</span> times, incurring an overall debt of <span id="totalDebt">????</span> taypoints.</p> 
 		<p>Of this amount, <span id="settledAmount">????</span> taypoints (<span id="percentSettled">????</span>%) have been settled. Collected taypoints will be redistributed to other users via a raffle.</p>
+		<p>To date, <span id="redistributedAmount">????</span> taypoints (<span id="percentRedistributed">????</span>%) have been paid out by raffle.</p>
 	
 	<table>
 	<tr>
@@ -66,6 +67,10 @@
 	<tr>
 	<th>Date/Time (UTC)</th>
 	<th>Amount</th>
+	</tr>
+	<tr>
+	<td>6/10/2018, 15:50:16</td>
+	<td>1505</td>
 	</tr>
 	<tr>
 	<td>6/10/2018, 15:09:17</td>
@@ -95,21 +100,24 @@
 	<th>User</th>
 	</tr>
 	</table>
-	
 
-	
 	</div>
 	
 	<script type="text/javascript">
 	var oofCount = 380988;
-	var settledAmount = 2046;
+	var settledAmount = 3551;
+	var redistributedAmount = 0;
 	
 	var totalDebt = oofCount * 350;
 	var percentSettled = Math.round(settledAmount * 100000 / totalDebt) / 1000;
+	var percentRedistributed = Math.round(redistributedAmount * 1000 / settledAmount) / 10;
+	
 	document.getElementById("oofCount").innerHTML = oofCount.toLocaleString();
 	document.getElementById("settledAmount").innerHTML = settledAmount.toLocaleString();
+	document.getElementById("redistributedAmount").innerHTML = redistributedAmount.toLocaleString();
 	document.getElementById("totalDebt").innerHTML = totalDebt.toLocaleString();
 	document.getElementById("percentSettled").innerHTML = percentSettled;
+	document.getElementById("percentRedistributed").innerHTML = percentRedistributed;
 	</script>
 </body>
 </html>
