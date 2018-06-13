@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
 	<title>The oof Debt</title>
@@ -85,9 +86,9 @@
 	<th colspan=4>Settlers</th>
 	</tr>
 	<tr><th>ID</th><th>User</th><th>Amount</th><th>%</th></tr>
-	<tr><td>001</td><td>Wet Patootie</td><td id="settled001">???</td><td id="psettled001">???</td></tr>
-	<tr><td>002</td><td>Sheikchilli</td><td id="settled002">???</td><td id="psettled002">???</td></tr>
-	<tr><td>003</td><td>TurtleByte</td><td id="settled003">???</td><td id="psettled003">???</td></tr>
+	<tr><td>001</td><td id="usettled001"></td><td id="settled001"></td><td id="psettled001"></td></tr>
+	<tr><td>002</td><td id="usettled002"></td><td id="settled002"></td><td id="psettled002"></td></tr>
+	<tr><td>003</td><td id="usettled003"></td><td id="settled003"></td><td id="psettled003"></td></tr>
 	</table>
 	
 	<br><br><br><br><br><br><br><br>
@@ -112,9 +113,9 @@
 	var oofCount = 380988;
 	var redistributedAmount = 0;
 	var settledAmounts = [
-		[001, 2893],
-		[002, 1505],
-		[003, 3500],
+		['Wet Patootie', 2893],
+		['Sheikchilli', 1505],
+		['TurtleByte', 3500],
 	];
 
 	//here's the stuff that, if it works the way i want it to, i should never touch
@@ -140,11 +141,14 @@
 	document.getElementById("percentSettled").innerHTML = percentSettled;
 	document.getElementById("percentRedistributed").innerHTML = percentRedistributed;
 	
-	//each settler should have these two lines why? because im stupid
+	//please dont ask, i tried another way and it didnt work
+	document.getElementById("usettled001").innerHTML = settledAmounts[0][0];
 	document.getElementById("settled001").innerHTML = settledAmounts[0][1].toLocaleString();
 	document.getElementById("psettled001").innerHTML = psettled[0];
+	document.getElementById("usettled002").innerHTML = settledAmounts[1][0];
 	document.getElementById("settled002").innerHTML = settledAmounts[1][1].toLocaleString();
 	document.getElementById("psettled002").innerHTML = psettled[1];
+	document.getElementById("usettled003").innerHTML = settledAmounts[2][0];
 	document.getElementById("settled003").innerHTML = settledAmounts[2][1].toLocaleString();
 	document.getElementById("psettled003").innerHTML = psettled[2];
 	
