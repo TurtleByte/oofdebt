@@ -18,7 +18,7 @@
 	td{
 	font-family: "Uni Sans Heavy";
 	color: #7289da;
-	font-size: 120%;
+	font-size: 110%;
 	text-align: center;
 	border: 1px solid #7289da;
 	}
@@ -70,6 +70,7 @@
 	<th>Date/Time (UTC)</th>
 	<th>Amount</th>
 	</tr>
+	<tr><td>004</td><td>06/13/2018 12:45:19</td><td>3</td></tr>
 	<tr><td>003</td><td>06/13/2018 12:44:54</td><td>102</td></tr>
 	<tr><td>001</td><td>06/12/2018 15:20:58</td><td>360</td></tr>
 	<tr><td>003</td><td>06/12/2018 13:32:33</td><td>3,500</td></tr>
@@ -90,19 +91,17 @@
 	<tr><td>001</td><td id="usettled001"></td><td id="settled001"></td><td id="psettled001"></td></tr>
 	<tr><td>002</td><td id="usettled002"></td><td id="settled002"></td><td id="psettled002"></td></tr>
 	<tr><td>003</td><td id="usettled003"></td><td id="settled003"></td><td id="psettled003"></td></tr>
+	<tr><td>004</td><td id="usettled004"></td><td id="settled004"></td><td id="psettled004"></td></tr>
 	</table>
-	
-	<br><br><br><br><br><br><br><br><br>
 	
 	<table>
 	<tr>
 	<th colspan=4>Raffle History</th>
 	</tr>
-	<tr>
-	<th>Date</th>
-	<th>Payout</th>
-	<th>User</th>
-	</tr>
+	<tr><th>Date</th><th>Payout</th><th>User</th></tr>
+	<tr><td>06/13/2018 14:43:55</td><td>5,000</td><td>Rebutotian</td></tr>
+	<tr><td>06/13/2018 14:43:04</td><td>2,000</td><td>scn1sla</td></tr>
+	<tr><td>06/13/2018 14:42:31</td><td>1,000</td><td>DemonWav</td></tr>
 	</table>
 	
 	</div>
@@ -112,11 +111,12 @@
 	//this is literally the most zero-effort and zero-knowledge thing i've ever written in my entire life
 	//starting here is the stuff i'm supposed to touch
 	var oofCount = 380988;
-	var redistributedAmount = 0;
+	var redistributedAmount = 8003;
 	var settledAmounts = [
 		['Wet Patootie', 2893],
 		['Sheikchilli', 1505],
 		['TurtleByte', 3602],
+		['blobsad', 3],
 	];
 
 	//here's the stuff that, if it works the way i want it to, i should never touch
@@ -126,7 +126,7 @@
 		settledAmount += settledAmounts[i][1];
 	};
 	
-	var psettled = [percentSettler(0),percentSettler(1),percentSettler(2)];
+	var psettled = [percentSettler(0),percentSettler(1),percentSettler(2),percentSettler(3)];
 	
 	function percentSettler(a){
 		return Math.round(settledAmounts[a][1] * 10000/ settledAmount)/100;
@@ -152,6 +152,9 @@
 	document.getElementById("usettled003").innerHTML = settledAmounts[2][0];
 	document.getElementById("settled003").innerHTML = settledAmounts[2][1].toLocaleString();
 	document.getElementById("psettled003").innerHTML = psettled[2];
+	document.getElementById("usettled004").innerHTML = settledAmounts[3][0];
+	document.getElementById("settled004").innerHTML = settledAmounts[3][1].toLocaleString();
+	document.getElementById("psettled004").innerHTML = psettled[3];
 	
 	</script>
 </body>
