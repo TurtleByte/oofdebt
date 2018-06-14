@@ -70,7 +70,8 @@
 	<th>Date/Time (UTC)</th>
 	<th>Amount</th>
 	</tr>
-	<tr><td>004</td><td>06/14/2018, 23:37:08</td><td>2</td></tr>
+	<tr><td>001</td><td>06/14/2018 12:30:14</td><td>505</td></tr>
+	<tr><td>004</td><td>06/14/2018 23:37:08</td><td>2</td></tr>
 	<tr><td>004</td><td>06/13/2018 12:45:19</td><td>3</td></tr>
 	<tr><td>003</td><td>06/13/2018 12:44:54</td><td>102</td></tr>
 	<tr><td>001</td><td>06/12/2018 15:20:58</td><td>360</td></tr>
@@ -114,7 +115,7 @@
 	var oofCount = 93;
 	var redistributedAmount = 8000;
 	var settledAmounts = [
-		['Wet Patootie', 2893],
+		['Wet Patootie', 3398],
 		['Sheikchilli', 1505],
 		['TurtleByte', 3602],
 		['blobsad', 5],
@@ -134,7 +135,7 @@
 	};
 	
 	var totalDebt = oofCount * 350;
-	var percentSettled = Math.round(settledAmount * 100000 / totalDebt) / 1000;
+	var percentSettled = Math.round(settledAmount * 10000 / totalDebt) / 100;
 	var percentRedistributed = Math.round(redistributedAmount * 1000 / settledAmount) / 10;	
 	document.getElementById("oofCount").innerHTML = oofCount.toLocaleString();
 	document.getElementById("settledAmount").innerHTML = settledAmount.toLocaleString();
