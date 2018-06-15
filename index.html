@@ -51,6 +51,7 @@
 	color: #7289da;
 	}
 	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -107,12 +108,19 @@
 	</table>
 	
 	</div>
-	
+
+
 	<script type="text/javascript">
-	
 	//this is literally the most zero-effort and zero-knowledge thing i've ever written in my entire life
+	
+	
+	//this grabs the thing so i dont have to manually count
+	$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('https://lhwb.tay.rocks/wp.php') + '&callback=?', function(data){
+	var str = data.contents;
+	var res = str.split('<h3>').pop().split('</h3>').shift();
+	
 	//starting here is the stuff i'm supposed to touch
-	var oofCount = 95;
+	var oofCount = res;
 	var redistributedAmount = 8000;
 	var settledAmounts = [
 		['Wet Patootie', 3398],
@@ -157,7 +165,8 @@
 	document.getElementById("usettled004").innerHTML = settledAmounts[3][0];
 	document.getElementById("settled004").innerHTML = settledAmounts[3][1].toLocaleString();
 	document.getElementById("psettled004").innerHTML = psettled[3];
-	
+	});
 	</script>
+
 </body>
 </html>
