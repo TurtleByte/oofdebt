@@ -114,7 +114,7 @@
 	//this is literally the most zero-effort and zero-knowledge thing i've ever written in my entire life
 	
 	//this grabs the thing so i dont have to manually count i have no idea what it means
-	$.getJSON('http://allorigins.me/get?url=' + encodeURIComponent('https://lhwb.tay.rocks/wp.php') + '&callback=?', function(data){
+	$.getJSON('https://allorigins.me/get?url=' + encodeURIComponent('https://lhwb.tay.rocks/wp.php') + '&callback=?', function(data){
 	var str = data.contents;
 	var res = str.split('<h3>').pop().split('</h3>').shift();
 	
