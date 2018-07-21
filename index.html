@@ -71,6 +71,9 @@
 	<th>Date/Time (UTC)</th>
 	<th>Amount</th>
 	</tr>
+	<tr><td>005</td><td>07/21/2018, 03:20:21</td><td>882</td></tr>
+	<tr><td>001</td><td>07/21/2018, 03:14:55</td><td>1400</td></tr>
+	<tr><td>001</td><td>07/21/2018, 03:13:15</td><td>4000</td></tr>
 	<tr><td>001</td><td>07/20/2018, 02:43:38</td><td>292</td></tr>
 	<tr><td>001</td><td>07/10/2018, 05:14:24</td><td>285</td></tr>
 	<tr><td>001</td><td>07/07/2018, 12:34:24</td><td>556</td></tr>
@@ -102,6 +105,7 @@
 	<tr><td>002</td><td id="usettled002"></td><td id="settled002"></td><td id="psettled002"></td></tr>
 	<tr><td>003</td><td id="usettled003"></td><td id="settled003"></td><td id="psettled003"></td></tr>
 	<tr><td>004</td><td id="usettled004"></td><td id="settled004"></td><td id="psettled004"></td></tr>
+	<tr><td>005</td><td id="usettled005"></td><td id="settled005"></td><td id="psettled005"></td></tr>
 	</table>
 	
 	<table>
@@ -129,10 +133,11 @@
 	var oofCount = res;
 	var redistributedAmount = 8000;
 	var settledAmounts = [
-		['Wet Patootie', 5715],
+		['Wet Patootie', 11115],
 		['Sheikchilli', 1505],
 		['TurtleByte', 3602],
 		['blobsad', 5],
+		['marvintran76', 882],
 	];
 
 	//here's the stuff that, if it works the way i want it to, i should never touch
@@ -142,7 +147,7 @@
 		settledAmount += settledAmounts[i][1];
 	};
 	
-	var psettled = [percentSettler(0),percentSettler(1),percentSettler(2),percentSettler(3)];
+	var psettled = [percentSettler(0),percentSettler(1),percentSettler(2),percentSettler(3),percentSettler(4)];
 	
 	function percentSettler(a){
 		return Math.round(settledAmounts[a][1] * 10000/ settledAmount)/100;
@@ -171,6 +176,9 @@
 	document.getElementById("usettled004").innerHTML = settledAmounts[3][0];
 	document.getElementById("settled004").innerHTML = settledAmounts[3][1].toLocaleString();
 	document.getElementById("psettled004").innerHTML = psettled[3];
+	document.getElementById("usettled005").innerHTML = settledAmounts[4][0];
+	document.getElementById("settled005").innerHTML = settledAmounts[4][1].toLocaleString();
+	document.getElementById("psettled005").innerHTML = psettled[4];
 	});
 	</script>
 
