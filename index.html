@@ -71,6 +71,7 @@
 	<th>Date/Time (UTC)</th>
 	<th>Amount</th>
 	</tr>
+	<tr><td>006</td><td>07/26/2018 13:24:22</td><td>5</td></tr>
 	<tr><td>001</td><td>07/26/2018 12:56:49</td><td>297</td></tr>
 	<tr><td>005</td><td>07/21/2018 08:24:50</td><td>147</td></tr>
 	<tr><td>005</td><td>07/21/2018 03:20:21</td><td>882</td></tr>
@@ -108,6 +109,7 @@
 	<tr><td>003</td><td id="usettled003"></td><td id="settled003"></td><td id="psettled003"></td></tr>
 	<tr><td>004</td><td id="usettled004"></td><td id="settled004"></td><td id="psettled004"></td></tr>
 	<tr><td>005</td><td id="usettled005"></td><td id="settled005"></td><td id="psettled005"></td></tr>
+	<tr><td>006</td><td id="usettled006"></td><td id="settled006"></td><td id="psettled006"></td></tr>
 	</table>
 	
 	<table>
@@ -142,6 +144,7 @@
 		['TurtleByte', 3602],
 		['blobsad', 5],
 		['marvintran76', 1029],
+		['GeeOctz97', 5],
 	];
 
 	//here's the stuff that, if it works the way i want it to, i should never touch
@@ -151,7 +154,7 @@
 		settledAmount += settledAmounts[i][1];
 	};
 	
-	var psettled = [percentSettler(0),percentSettler(1),percentSettler(2),percentSettler(3),percentSettler(4)];
+	var psettled = [percentSettler(0),percentSettler(1),percentSettler(2),percentSettler(3),percentSettler(4),percentSettler(5)];
 	
 	function percentSettler(a){
 		return Math.round(settledAmounts[a][1] * 10000/ settledAmount)/100;
@@ -183,6 +186,9 @@
 	document.getElementById("usettled005").innerHTML = settledAmounts[4][0];
 	document.getElementById("settled005").innerHTML = settledAmounts[4][1].toLocaleString();
 	document.getElementById("psettled005").innerHTML = psettled[4];
+	document.getElementById("usettled006").innerHTML = settledAmounts[5][0];
+	document.getElementById("settled006").innerHTML = settledAmounts[5][1].toLocaleString();
+	document.getElementById("psettled006").innerHTML = psettled[5];
 	});
 	</script>
 
